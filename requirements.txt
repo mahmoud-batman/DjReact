@@ -1,0 +1,10 @@
+django==2.2.7
+psycopg2>=2.7.5,<2.8.0 
+djangorestframework==3.10.3 
+django-rest-auth==0.9.5
+django-allauth==0.42.0
+
+## SSL 
+django-extensions
+Werkzeug
+pyOpenSSL

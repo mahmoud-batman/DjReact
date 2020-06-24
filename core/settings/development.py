@@ -1,9 +1,7 @@
 from .base import *
 
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
 
-INSTALLED_APPS += [
-
-]
+# STRIPE_PUBLIC_KEY = 'test-key'
+# STRIPE_SECRET_KEY = 'test-key'

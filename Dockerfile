@@ -14,8 +14,6 @@ WORKDIR /DjReact
 COPY requirements.txt /DjReact/
 RUN pip install -r requirements.txt
 
-# COPY Pipfile Pipfile.lock /eCommerce/
-# RUN pip install pipenv && pipenv install --system
 
 # Copy project
 COPY . /DjReact/

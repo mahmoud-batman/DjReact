@@ -1,8 +1,13 @@
 from .base import *
 
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['ip-address', 'my-domain.com']
+ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
+
+# ALLOWED_HOSTS = ['127.0.0.1']
+
+# STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
+# STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
 
 
 # Password validation

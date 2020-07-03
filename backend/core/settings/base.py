@@ -27,6 +27,8 @@ INSTALLED_APPS = [
 
     # restframework
     'rest_framework',
+    # CORS
+    'corsheaders',
 
     # Django Rest Auth
     'rest_framework.authtoken',
@@ -72,6 +74,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,5 +152,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 5  # in seconds
 
-# LOGIN_REDIRECT_URL = "/api/v1/users"
-# ACCOUNT_LOGOUT_REDIRECT_URL = "/api/v1/users"
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+    '127.0.0.1:3000',
+    '192.168.1.4:3000',
+)

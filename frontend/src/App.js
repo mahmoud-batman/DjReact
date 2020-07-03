@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "antd/dist/antd.css";
+import { withRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import CustomLayout from "./containers/Layout";
+import Routes from "./routes";
+import { connect } from "react-redux";
+import { checkAuth } from "./store/actions";
+
+class App extends Component {
+  componentDidMount() {
+    this.props.onCheckAuth();
+  }
+  render() {
+    return (
+      <div>
+        <CustomLayout {...this.props}>
+          <Routes />
+        </CustomLayout>
+      </div>
+    );
+  }
 }
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.AuthReducer.user !== null,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onCheckAuth: () => dispatch(checkAuth()),
+  };
+};
 
-export default App;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

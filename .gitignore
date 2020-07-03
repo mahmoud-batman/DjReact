@@ -13,3 +13,5 @@ frontend/.pnp
 frontend/.pnp.js
 frontend/build
 frontend/*.log*
+
+notes.md

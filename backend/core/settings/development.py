@@ -1,7 +1,5 @@
 from .base import *
 
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = True
 
-
-# STRIPE_PUBLIC_KEY = 'test-key'
-# STRIPE_SECRET_KEY = 'test-key'
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.4']

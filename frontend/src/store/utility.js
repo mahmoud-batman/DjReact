@@ -4,5 +4,3 @@ export const updateObject = (oldObject, updatedProperties) => {
     ...updatedProperties,
   };
 };
-
-export const authurl = "http://127.0.0.1:8000/api/v1/users/rest-auth";

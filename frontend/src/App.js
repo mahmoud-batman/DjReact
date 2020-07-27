@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
+import "semantic-ui-css/semantic.min.css";
+
 import { withRouter } from "react-router-dom";
 
 import CustomLayout from "./containers/Layout";

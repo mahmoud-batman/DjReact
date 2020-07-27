@@ -4,6 +4,7 @@ FROM node:12
 WORKDIR /app/frontend/
 # Install Application dependencies
 COPY package.json yarn.lock /app/frontend/
+
 RUN yarn install --no-optional
 # Copy over the rest of the project
 COPY . /app/frontend/

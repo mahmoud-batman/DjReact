@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # local
     'users.apps.UsersConfig',
+    'products.apps.ProductsConfig',
 ]
 
 SITE_ID = 1
@@ -139,6 +140,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_files"),
+    '/var/www/static/',
+]
+
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -156,5 +167,5 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 5  # in seconds
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
     '127.0.0.1:3000',
-    '192.168.1.4:3000',
+    '192.168.1.3:3000',
 )

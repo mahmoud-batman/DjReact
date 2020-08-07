@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../store/actions";
 
+import { Icon } from "semantic-ui-react";
 const { Header, Content, Footer } = Layout;
 const { Text } = Typography;
 
@@ -23,7 +24,7 @@ class CustomLayout extends Component {
               style={{ lineHeight: "64px" }}
             >
               {isAuthenticated ? (
-                <Menu.Item key="2" onClick={this.props.logout}>
+                <Menu.Item key="2" onClick={(_) => this.props.logout()}>
                   Logout
                 </Menu.Item>
               ) : (
@@ -33,12 +34,15 @@ class CustomLayout extends Component {
               )}
 
               <Menu.Item key="1">
-                <NavLink to="/">Posts</NavLink>
+                <NavLink to="/products">Products</NavLink>
               </Menu.Item>
               <Menu.Item key="3">
                 <Text code style={{ color: "lightgrey" }}>
                   {user}
                 </Text>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Icon circular name="cart plus" />
               </Menu.Item>
             </Menu>
           </Header>
